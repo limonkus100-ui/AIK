@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Giriş Ekranı</title>
+</head>
+<body>
+
+<div id="icerik" style="display:none;"></div>
+
+<script>
+  // ŞİFRE
+  const sifre = "1234";
+
+  const giris = prompt("Şifreyi gir:");
+
+  if (giris === sifre) {
+    const yazilar = [
+      "Bu site deneme amaçlıdır.",
+      "İçerik geliştirme aşamasındadır.",
+      "Yakında güncellenecektir."
+    ];
+
+    const alan = document.getElementById("icerik");
+    alan.style.display = "block";
+
+    yazilar.forEach(yazi => {
+      const p = document.createElement("p");
+      p.textContent = yazi;
+      alan.appendChild(p);
+    });
+
+  } else {
+    document.body.innerHTML = "<h2>Erişim reddedildi</h2>";
+  }
+</script>
+
+</body>
+</html>
